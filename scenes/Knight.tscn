@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ch3x3swhu7n3u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fexdl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fexdl"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1158317642]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194343507]
+sprite_frames = SubResource("SpriteFrames_fexdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1001336224]
+shape = SubResource("CircleShape2D_fexdl")
