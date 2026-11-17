@@ -1,13 +1,84 @@
 [gd_scene format=3 uid="uid://ch3x3swhu7n3u"]
 
+[ext_resource type="Script" uid="uid://dsb1qlqo5rbgh" path="res://scripts/KnightHandler.gd" id="1_2c1kk"]
+[ext_resource type="Texture2D" uid="uid://3k66lbldxypx" path="res://assets/sprites/knightsheetrun.png" id="1_s5ulg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c1kk"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf0mv"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nix61"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egtwa"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vpbp"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn6uc"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tajsn"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc63g"]
+atlas = ExtResource("1_s5ulg")
+region = Rect2(224, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_fexdl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c1kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf0mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nix61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egtwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vpbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn6uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tajsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc63g")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fexdl"]
+radius = 13.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1158317642]
+[node name="Knight" type="CharacterBody2D" unique_id=1158317642]
+z_index = 1
+script = ExtResource("1_2c1kk")
+move_speed = 35.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194343507]
 sprite_frames = SubResource("SpriteFrames_fexdl")
+animation = &"run"
+autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1001336224]
 shape = SubResource("CircleShape2D_fexdl")
